@@ -24,7 +24,7 @@ pip install -r requirements.txt
 AGENT_API_KEY=my-secret-key python app.py
 
 # Test với key hợp lệ
-curl -H "X-API-Key: my-secret-key" http://localhost:8000/ask \
+curl -H "X-API-Key:" http://localhost:8000/ask \
      -X POST -H "Content-Type: application/json" \
      -d '{"question": "hello"}'
 
