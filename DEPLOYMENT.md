@@ -12,7 +12,7 @@
 > Hiện tại project đã được cấu hình sẵn để deploy.
 
 ```
-https://<your-app>.railway.app
+https://lab122a202600431trannhathoang-production.up.railway.app
 ```
 
 ## Platform
@@ -28,19 +28,19 @@ https://<your-app>.railway.app
 
 ### Health Check
 ```bash
-curl https://<your-app>.railway.app/health
+curl https://lab122a202600431trannhathoang-production.up.railway.app/health
 # Expected: {"status": "ok", "version": "1.0.0", ...}
 ```
 
 ### Readiness Check
 ```bash
-curl https://<your-app>.railway.app/ready
+curl https://lab122a202600431trannhathoang-production.up.railway.app/ready
 # Expected: {"ready": true}
 ```
 
 ### API Test (with authentication)
 ```bash
-curl -X POST https://<your-app>.railway.app/ask \
+curl -X POST https://lab122a202600431trannhathoang-production.up.railway.app/ask \
   -H "X-API-Key: YOUR_KEY" \
   -H "Content-Type: application/json" \
   -d '{"question": "What is deployment?"}'
@@ -49,7 +49,7 @@ curl -X POST https://<your-app>.railway.app/ask \
 
 ### Test without API key (should fail)
 ```bash
-curl -X POST https://<your-app>.railway.app/ask \
+curl -X POST https://lab122a202600431trannhathoang-production.up.railway.app/ask \
   -H "Content-Type: application/json" \
   -d '{"question": "Hello"}'
 # Expected: 401 {"detail": "Missing API key..."}
@@ -59,7 +59,7 @@ curl -X POST https://<your-app>.railway.app/ask \
 ```bash
 for i in {1..25}; do
   echo "Request $i:"
-  curl -s -X POST https://<your-app>.railway.app/ask \
+  curl -s -X POST https://lab122a202600431trannhathoang-production.up.railway.app/ask \
     -H "X-API-Key: YOUR_KEY" \
     -H "Content-Type: application/json" \
     -d "{\"question\": \"test $i\"}"
